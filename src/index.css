@@ -103,3 +103,15 @@
   border: none;
   @apply bg-primary-600;
 }
+
+/* 支援 Windows 新的強制色彩模式（取代 -ms-high-contrast） */
+@media (forced-colors: active) {
+  body {
+    forced-color-adjust: none;
+    background: Canvas;
+    color: CanvasText;
+  }
+  .btn-primary, .btn-secondary, .card, .input {
+    forced-color-adjust: none;
+  }
+}
