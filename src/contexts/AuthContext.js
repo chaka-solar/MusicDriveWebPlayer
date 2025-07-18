@@ -17,7 +17,8 @@ export const AuthProvider = ({ children }) => {
 
   // Google OAuth 2.0 configuration
   const CLIENT_ID = '900734449708-drjrc967e9mav76sd5eg9d8kdjhl6bj2.apps.googleusercontent.com'; // Replace with your actual Client ID
-  const SCOPES = 'https://www.googleapis.com/auth/drive.readonly';
+  //const SCOPES = 'https://www.googleapis.com/auth/drive.readonly';
+  const SCOPES = 'openid profile email https://www.googleapis.com/auth/drive.readonly';
 
   useEffect(() => {
     initializeGoogleAuth();
