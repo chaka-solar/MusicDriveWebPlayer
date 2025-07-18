@@ -110,6 +110,13 @@ export const AuthProvider = ({ children }) => {
               // Store in sessionStorage
               sessionStorage.setItem('user', JSON.stringify(userData));
               sessionStorage.setItem('accessToken', response.access_token);
+            } else {
+              // 若 access token 無效，清除 sessionStorage 並提示
+              sessionStorage.removeItem('user');
+              sessionStorage.removeItem('accessToken');
+              setUser(null);
+              setAccessToken(null);
+              alert('Google 登入失敗，請重新登入。');
             }
           }
         },
